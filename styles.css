@@ -12,5 +12,14 @@ html {
 
 body {
 	box-sizing: border-box;
-	font-family; 'Spectral', serif;	
+	font-family: 'Spectral', serif;	
+}
+
+.container {
+	display: flex;
+}
+
+.heading {
+	font-size: 4.5rem;
+	font-weight: 300;
 }
