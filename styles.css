@@ -15,11 +15,42 @@ body {
 	font-family: 'Spectral', serif;	
 }
 
-.container {
-	display: flex;
-}
-
 .heading {
 	font-size: 4.5rem;
 	font-weight: 300;
+	text-align: center;
+	padding: 1rem;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+}
+
+#bases {
+	display: flex;
+	flex-wrap: wrap;
+	text-align: center;
+}
+
+.base-1, 
+.base-2 {
+	padding: 1rem;
+	margin: .5rem;
+	flex-basis: 100%;
+
+}
+
+label {
+	font-size: 2.4rem;
+	margin-right: .8rem;
+}
+
+select {
+    margin-left: 5px;
+    background-color: white;
+    text-indent: .8rem;
+    font-size: 2.2rem;
+    height: 3.5rem;
+    width: 70px;
 }
