@@ -54,3 +54,42 @@ select {
     height: 3.5rem;
     width: 70px;
 }
+
+#user {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 1rem;
+}
+
+#num-label {
+	font-size: 2.4rem;
+}
+
+.num-input {
+	font-size: 2.4rem;
+	padding: 3px;
+	margin: 5px;
+}
+
+.btn {
+	background-color: #214cce;
+	font-family: 'serif';
+    text-align: center;
+    text-decoration: none;
+    padding: .8rem 1.4rem;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 2.2rem;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    opacity: 1;
+    letter-spacing: 1px;
+    box-shadow: 2px 2px .5rem #333;
+    margin-top: 2.5rem;
+}
+
+.btn:hover {
+	background-color: #d90035;
+}
