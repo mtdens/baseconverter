@@ -91,6 +91,9 @@ select {
 	background-color: #d90035;
 }
 
+#results {
+	display: none;
+}
 
 @media screen and (min-width: 640px){
 	#bases {

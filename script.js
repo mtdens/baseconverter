@@ -88,3 +88,54 @@ const number_new_base =(number, base) => {
 
 	return digit;
 }
+
+const error_check = (number, base) => {
+  /*
+  * Checks user input to make sure it's between 0-9 or A-h or J-k.
+  * Also checks to make sure the number is valid in the base, e.g. 43 base 5 is valid
+  * Returns: a boolean value, true if valid, false if not valid
+  */
+  
+  //If number is empty
+  if(number === ""){
+    return false;
+  }
+  
+  // Checks number to see if in 0-9 or A-h or J-k
+  number = number.toUpperCase();
+  let error = number.search("[(iI|L-z)]+");
+
+  //need to make sure bases higher than 10 check out
+  let bases = "0123456789ABCDEFGHJK";
+
+  if(error === -1){
+    //Makes substring for proper base, e.g., base 4 - 0123
+    bases = bases.substring(0, parseInt(base));
+    
+    //Loops through number checking each digit
+    for(let i = 0; i < number.length; i++){
+      if(bases.includes(number[i]) === false){
+      	return false;
+      }
+    }
+    //Number is between 0-9 or A-h or J-k and correct base
+    return true;
+  }
+  return false;
+}
+
+function write_values(old_number, old_base, new_number, new_base){
+
+	//Writes User inputted number
+	document.getElementById("old-n").text = String(old_number);
+
+	//Writes old base
+	document.getElementById("old-b").text = String(old_base);
+
+	//Writes new base
+	document.getElementById("new-b").text = String(new_base);
+
+	//Writes new number in new base
+	document.getElementById("new-n").text = String(new_number);
+	
+}
