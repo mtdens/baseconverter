@@ -49,3 +49,42 @@ const number_base_10 = (number, base) => {
 	}
 	return base_10; 
 }
+
+const number_new_base =(number, base) => {
+	/*
+	* Takes a number in base 10 and converts to a new base
+	* Returns: a string in a different base
+	*/
+
+	let bases_higher_than_10 = {
+		10: 'A',
+		11: 'B',
+		12: 'C',
+		13: 'D',
+		14: 'E',
+		15: 'F',
+		16: 'G',
+		17: 'H',
+		18: 'J',
+		19: 'K',
+	};
+
+	let digit = '';
+
+	while(number !== 0){
+
+		remainder = String(number % base);
+		if(remainder in bases_higher_than_10){
+			digit += bases_higher_than_10[remainder];
+		}
+		else{
+			digit += remainder;
+		}
+
+		number = Math.floor(number/base);
+	}
+
+	digit = digit.split('').reverse().join('');
+
+	return digit;
+}
