@@ -124,18 +124,58 @@ const error_check = (number, base) => {
   return false;
 }
 
-function write_values(old_number, old_base, new_number, new_base){
+const write_values = (old_number, old_base, new_number, new_base) => {
 
 	//Writes User inputted number
-	document.getElementById("old-n").text = String(old_number);
+	document.getElementById("old-n").textContent = String(old_number);
 
 	//Writes old base
-	document.getElementById("old-b").text = String(old_base);
+	document.getElementById("old-b").textContent = String(old_base);
 
 	//Writes new base
-	document.getElementById("new-b").text = String(new_base);
+	document.getElementById("new-b").textContent = String(new_base);
 
 	//Writes new number in new base
-	document.getElementById("new-n").text = String(new_number);
-	
+	document.getElementById("new-n").textContent = String(new_number);	
 }
+
+const begin = () => {
+	/*
+	* When user clicks convert button begin function runs through program
+	*/
+
+	let values = []; //[old_number, old_base, new_base]
+
+	//Calls function to get user number, old base and new base
+	values = get_values();
+
+	//Runs error_check to validate input
+	//Returns true if valid, false otherwise
+	let status = error_check(values[0], values[1]);
+
+	//if input field is empty, it doesn't display anything
+	if(values[0] === ''){
+		document.getElementById("result").style.display = "none";
+	}
+	else if(status === true){
+		//Calls function to convert user number to base 10
+		var base_10_number = number_base_10(values[0], values[1]);
+
+		//Calls function to convert base 10 number to new base
+		var new_base_number = number_new_base(base_10_number, values[2]);
+
+		//Calls function to write out results to html
+		write_values(values[0], values[1], new_base_number, values[2]);
+
+		//Clears input field
+		document.getElementById("orig-number").value = '';
+
+		//Changes display value so results are shown
+		document.getElementById("results").style.display = "block";
+	}
+	else{
+		document.getElementById("results").style.display = "none";
+	}
+}
+
+document.getElementById("convert").addEventListener("click", begin);
