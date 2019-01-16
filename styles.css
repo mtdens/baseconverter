@@ -93,6 +93,12 @@ select {
 
 #results {
 	display: none;
+	text-align: center;
+	font-size: 2rem;
+}
+
+#new-n {
+	font-size: 3rem;
 }
 
 @media screen and (min-width: 640px){
@@ -108,6 +114,14 @@ select {
 
 	.btn {
 		margin: 1rem;
+	}
+
+	#results {
+		font-size: 2.5rem;
+	}
+
+	#new-n {
+		font-size: 3.5rem;
 	}
 
 }
