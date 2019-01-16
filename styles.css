@@ -15,6 +15,10 @@ body {
 	font-family: 'Spectral', serif;	
 }
 
+header {
+	margin-top: 3rem;
+}
+
 .heading {
 	font-size: 4.5rem;
 	font-weight: 300;
@@ -95,6 +99,7 @@ select {
 	display: none;
 	text-align: center;
 	font-size: 2rem;
+	margin-top: 1.5rem;
 }
 
 #new-n {
